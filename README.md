@@ -10,8 +10,37 @@ Asal perguruan tinggi: Institut Teknologi Sepuluh Nopember </br>
 
 Project ini terdiri dari aplikasi mobile dan website. Aplikasi mobile digunakan oleh Bank Sampah, Nasabah, dan TPS untuk melakukan kegiatan transaksi sampah. Sedangkan website digunakan untuk menampilkan summary data dari database untuk menampilkan hasil tracking transaksi antar entitas. Saat ini project belum bisa diakses dari URL public sehingga untuk menjalankannya perlu melakukan running project di environment lokal.
 
-### Tampilan Website
-<img width="1495" alt="image" src="https://github.com/user-attachments/assets/db0ac59b-cc3c-4ef9-9138-c221cdf52abd" />
-<img width="1489" alt="image" src="https://github.com/user-attachments/assets/3fdd67ac-73f9-409f-be2a-09fa85206ed9" />
-<img width="1492" alt="image" src="https://github.com/user-attachments/assets/3ecc033a-b1ad-46a9-9e88-8805d78e8e5b" />
-<img width="1480" alt="image" src="https://github.com/user-attachments/assets/719814cf-54e9-4bc7-9990-e816c781e2c2" />
+### Quick Start: Mobile App Setup
+- 📥 Clone repository
+- 📂 Masuk ke folder project menggunakan
+cd wastetrack
+- 📦 Install dependencies Flutter dengan menjalankan
+flutter pub get
+- ▶️ Jalankan aplikasi Flutter dengan menonaktifkan Impeller menggunakan perintah
+flutter run --no-enable-impeller
+- 📱 Pastikan emulator atau perangkat sudah terhubung dengan cek menggunakan
+flutter devices
+
+
+# Tampilan Mobile
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/00e4d13a-e147-435a-a5e7-5a9c895ddcd8" width="30%" />
+  <img src="https://github.com/user-attachments/assets/646069f6-a5b4-49d7-92ef-522813c85500" width="30%" />
+  <img src="https://github.com/user-attachments/assets/021ba461-2637-4cee-8910-780bde0b6af1" width="30%" />
+</p>
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/ad15d013-ff21-4648-9666-fa4b1640f22f" width="30%" />
+  <img src="https://github.com/user-attachments/assets/5ce35615-6e2e-4ca8-b7be-80fc9acc46d6" width="30%" />
+  <img src="https://github.com/user-attachments/assets/7482ef75-0c89-49d3-bbf7-ecfa24dc2613" width="30%" />
+</p>
+
+
+# Tampilan Website
+![image](https://github.com/user-attachments/assets/a30951cd-2926-40b6-b116-a435d786e1eb)
+![image](https://github.com/user-attachments/assets/4e4b051e-4974-4bd8-9724-f4d4cfda5b19)
+![image](https://github.com/user-attachments/assets/af07856e-5d4f-4d1f-9b39-c8867617a1b8)
+![image](https://github.com/user-attachments/assets/73b6f7ff-3dfc-4d5d-8160-d1f87b0bc92e)
+
+
+
