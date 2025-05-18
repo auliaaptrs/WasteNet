@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale-1.0">
+    <title>Wastenet</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body onload="updateSummary()">
+    <h1>Wastenet Summary</h1>
+    <div class="filter-section">
+        <div class="filter-group">
+          <div class="filter-item">
+            <label for="month">Bulan:</label>
+            <input type="month" id="month">
+          </div>
+          
+          <div class="filter-item">
+            <label for="provinsi">Provinsi:</label>
+            <select id="provinsi">
+              <option value="">Pilih Provinsi</option>
+            </select>
+          </div>
+      
+          <div class="filter-item">
+            <label for="kabupaten">Kabupaten:</label>
+            <select id="kabupaten">
+              <option value="">Pilih Kabupaten</option>
+            </select>
+          </div>
+      
+          <div class="filter-item">
+            <label for="kecamatan">Kecamatan:</label>
+            <select id="kecamatan">
+              <option value="">Pilih Kecamatan</option>
+            </select>
+          </div>
+      
+          <div class="filter-item">
+            <label for="kelurahan">Kelurahan:</label>
+            <select id="kelurahan">
+              <option value="">Pilih Kelurahan</option>
+            </select>
+          </div>
+      
+          <button onclick="updateSummary()">Terapkan Filter</button>
+        </div>
+      </div>
+      
+      
+    <h2 id="summary-title" style="text-align: center;"></h2>
+
+    <div class="stats-container">
+        <!-- Bank Sampah -->
+        <div class="stat-box">
+            <div class="stat-number" id="bank-sampah">10</div>
+            <div class="stat-label">Bank Sampah</div>
+    
+            <div class="stat-detail">
+                <div>
+                    Bank Sampah Unit: <span id="bs-unit">8</span>
+                </div>
+                <div>
+                    Bank Sampah Induk: <span id="bs-induk">2</span>
+                </div>
+            </div>
+        </div>
+    
+        <!-- TPS -->
+        <div class="stat-box">
+            <div class="stat-number" id="tps">7</div>
+            <div class="stat-label">TPS</div>
+    
+            <div class="stat-detail">
+                <div>
+                    TPS 3R: <span id="tps-3r">1</span>
+                </div>
+                <div>
+                    TPS Non-3R: <span id="tps-non3r">6</span>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Nasabah -->
+        <div class="stat-box">
+            <div class="stat-number" id="nasabah">140</div>
+            <div class="stat-label">Nasabah</div>
+
+            <div class="stat-detail">
+              <div>
+                  Nasabah Mandiri: <span id="nasabah-mandiri">130</span>
+              </div>
+              <div>
+                  Nasabah Institusi: <span id="nasabah-institusi">10</span>
+              </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="stats-container">
+        <div class="stat-box">
+            <div class="stat-number" id="bank-sampah-masuk">200 kg</div>
+            <div class="stat-label">Sampah masuk ke bank sampah unit</div>
+    
+            <div class="stat-detail">
+                <div>
+                    Dari Nasabah: <span id="nasabah-masuk">50 kg</span>
+                </div>
+                <div>
+                    Dari TPS: <span id="tps-masuk">150 kg</span>
+                </div>
+            </div>
+        </div>
+    
+        <div class="stat-box">
+            <div class="stat-number" id="bank-sampah-keluar">200 kg</div>
+            <div class="stat-label">Sampah keluar dari bank sampah unit</div>
+    
+            <div class="stat-detail">
+                <div>
+                    Ke bank sampah induk: <span id="keluar-induk">200 kg</span>
+                </div>
+                <div>
+                    Ke entitas lainnya: <span id="keluar lainnya">0 kg</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="stats-container">
+        <div class="stat-box">
+            <div class="stat-number" id="bank-sampah-induk-masuk">240 kg</div>
+            <div class="stat-label">Sampah masuk ke bank sampah induk</div>
+    
+            <div class="stat-detail">
+                <div>
+                    Dari Bank Sampah Unit: <span id="unit-induk-masuk">200 kg</span>
+                </div>
+                <div>
+                    Dari Nasabah: <span id="nasabah-induk-masuk">20 kg</span>
+                </div>
+                <div>
+                    Dari TPS: <span id="tps-induk-masuk">20 kg</span>
+                </div>
+            </div>
+        </div>
+    
+        <!-- TPS -->
+        <div class="stat-box">
+            <div class="stat-number" id="bank-sampah-induk-keluar">240 kg</div>
+            <div class="stat-label">Sampah keluar dari bank sampah induk</div>
+        </div>
+    </div>
+
+    <label id="analysis" style="text-align: center;">Dari data di atas, dapat dilihat bahwa masih terdapat sampah daur ulang yang berakhir di TPS. 
+      Hal ini menunjukkan adanya masyarakat yang kurang sadar untuk mengelola sampah daur ulang sebagaimana mestinya.
+      Data smapah masuk dan keluar cukup seimbang. Dapat diasumsikan proses tracking sudah berjalan dengan baik sejauh ini.</label>
+
+    <h2>Top 10 Statistik Sampah</h2>
+
+  <div class="chart-container">
+    <h3>Top 10 Kategori Sampah di Bank Sampah Unit</h3>
+    <canvas id="kategoriChart"></canvas>
+  </div>
+
+  <div class="chart-container">
+    <h3>Top 10 Produk dari Nasabah</h3>
+    <canvas id="nasabahChart"></canvas>
+  </div>
+
+  <div class="chart-container">
+    <h3>Top 10 Sampah dari TPS</h3>
+    <canvas id="tpsChart"></canvas>
+  </div>
+
+  <div class="search-bar">
+    <input type="text" id="brandSearch" placeholder="Cari berdasarkan nama brand...">
+    <button onclick="filterData()">Cari</button>
+  </div>
+
+  <div class="stats-container2" id="statsSection1">
+    <!-- Bank Sampah Unit -->
+    <div class="stat-box">
+      <div class="stat-number" id="bsu-total">5 kg</div>
+      <div class="stat-label">Sampah masuk ke bank sampah unit</div>
+      <div class="stat-detail">
+        <div>Dari Nasabah: <span id="bsu-nasabah">3 kg</span></div>
+        <div>Dari TPS: <span id="bsu-tps">2 kg</span></div>
+      </div>
+    </div>
+
+    <!-- Sampah keluar dari BSU -->
+    <div class="stat-box">
+      <div class="stat-number" id="bsu-out-total">8 kg</div>
+      <div class="stat-label">Sampah keluar dari bank sampah unit</div>
+      <div class="stat-detail">
+        <div>Ke bank sampah induk: <span id="bsu-out-induk">6 kg</span></div>
+        <div>Ke entitas lainnya: <span id="bsu-out-lain">2 kg</span></div>
+      </div>
+    </div>
+    </div>
+
+    <div class="stats-container2" id="statsSection2">
+    <!-- Bank Sampah Induk -->
+    <div class="stat-box">
+      <div class="stat-number" id="bsi-total">10 kg</div>
+      <div class="stat-label">Sampah masuk ke bank sampah induk</div>
+      <div class="stat-detail">
+        <div>Dari Bank Sampah Unit: <span id="bsi-unit">6 kg</span></div>
+        <div>Dari Nasabah: <span id="bsi-nasabah">3 kg</span></div>
+        <div>Dari TPS: <span id="bsi-tps">1 kg</span></div>
+      </div>
+    </div>
+
+    <!-- Sampah keluar dari BSI -->
+    <div class="stat-box">
+      <div class="stat-number" id="bsi-out-total">10 kg</div>
+      <div class="stat-label">Sampah keluar dari bank sampah induk</div>
+    </div>
+  </div>
+
+  <div class="stats-container2" id="statsSection3">
+    <label id="analysis2" style="text-align: center;">Dari data di atas, dapat dilihat bahwa masih terdapat sampah daur ulang yang berakhir di TPS. 
+      Hal ini menunjukkan adanya masyarakat yang kurang sadar untuk mengelola sampah daur ulang sebagaimana mestinya.
+      Data smapah masuk dan keluar tidak seimbang. Dapat diasumsikan ada entitas yang belum terdaftar dalam aplikasi sehingga data transaksi tidak masuk ke sistem tracking.
+    </label>  
+  </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
