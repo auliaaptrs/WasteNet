@@ -1,13 +1,5 @@
 # WasteNet
 
-Nama tim: Sistah </br>
-Anggota tim:
-1. Wardatul Amalia Safitri (5025211006) / Teknik Informatika</br>
-2. Aulia Putri Salsabila (5025221281) / Teknik Informatika</br>
-3. Ainun Jariyah (5010211003) / Teknik Industri</br>
-
-Asal perguruan tinggi: Institut Teknologi Sepuluh Nopember </br>
-
 Project ini terdiri dari aplikasi mobile dan website. Aplikasi mobile digunakan oleh Bank Sampah, Nasabah, dan TPS untuk melakukan kegiatan transaksi sampah. Sedangkan website digunakan untuk menampilkan summary data dari database untuk menampilkan hasil tracking transaksi antar entitas. Saat ini project belum bisa diakses dari URL public sehingga untuk menjalankannya perlu melakukan running project di environment lokal.
 
 ### Quick Start: Mobile App Setup
@@ -35,12 +27,6 @@ flutter devices
   <img src="https://github.com/user-attachments/assets/7482ef75-0c89-49d3-bbf7-ecfa24dc2613" width="30%" />
 </p>
 
-
-# Tampilan Website
-![image](https://github.com/user-attachments/assets/a30951cd-2926-40b6-b116-a435d786e1eb)
-![image](https://github.com/user-attachments/assets/4e4b051e-4974-4bd8-9724-f4d4cfda5b19)
-![image](https://github.com/user-attachments/assets/af07856e-5d4f-4d1f-9b39-c8867617a1b8)
-![image](https://github.com/user-attachments/assets/73b6f7ff-3dfc-4d5d-8160-d1f87b0bc92e)
 
 
 
